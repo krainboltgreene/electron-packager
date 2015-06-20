@@ -37,8 +37,9 @@ module.exports = function packager (opts, cb) {
 
   // Only include files specified
   var defaultFiles = ['package.json']
-  opts.files = (defaultFiles + config.files).map(function (item) {
-    path.join(opts.dir, item)
+  var files = defaultFiles + config.files
+  opts.files = files.map(function (item) {
+    return path.join(opts.dir, item)
   })
 
   download({
