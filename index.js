@@ -37,7 +37,7 @@ module.exports = function packager (opts, cb) {
 
   // Only include files specified
   var defaultFiles = ["package.json"]
-  var files = defaultFiles + package.config.files
+  opts.files = defaultFiles + package.config.files
 
   download({
     platform: platform,
