@@ -15,7 +15,7 @@ module.exports = function packager (opts, cb) {
   var platform = opts.platform
   var arch = opts.arch
   var version = opts.version
-  var config = require(__dirname + '/package.json').config
+  var config = require(path.join(opts.dir, "package.json")).config
 
   if (!platform) cb(new Error('Please specify a platform with --platform=, see --help'))
   if (!arch) cb(new Error('Please specify a arch with --arch=, see --help'))
