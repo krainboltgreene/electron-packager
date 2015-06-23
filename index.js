@@ -37,12 +37,8 @@ module.exports = function packager (opts, cb) {
 
   // Only include files specified
   var defaultFiles = ['package.json']
-  var files = defaultFiles + config.files
-  console.log(files)
-  console.log(defaultFiles)
-  console.log(config)
-  console.log(config.files)
-  opts.files = files.prototype.map(function (item) {
+  var files = defaultFiles.concat(config.files)
+  opts.files = files.map(function (item) {
     return path.join(opts.dir, item)
   })
 
